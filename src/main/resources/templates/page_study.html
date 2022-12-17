@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <h1>페이지 응답</h1>
+    <button class="btn1">버튼1</button>
+    <button class="btn2">버튼2</button>
+    <script type="text/javascript">
+        const btn1 = document.querySelector(".btn1");
+        const btn2 = document.querySelector(".btn2");
+
+        btn1.onclick = () =>{
+            let student = {
+                name: "kkr",
+                email: "kkr583@naver.com",
+                address: "부산 수영구 망미동"
+            }
+            $.ajax({
+                async: false,
+                type: "post",
+                url: "/study/student/1",
+                contentType: "application/json",
+                data: JSON.stringify(student),
+                dataType: "text",
+                success: response => {
+                    alert(response);
+                },
+                error: response => {
+                    alert("요청 실패");
+                }
+            });
+
+        }
+        
+        btn2.onclick = () =>{
+            $.ajax({
+                async: false,
+                type: "get",
+                url: "/study/student/2",
+                dataType: "Json",
+                success: response => {
+                    console.log(response)
+                },
+                error: response => {
+                    console.log(response)
+                }
+            })
+        }
+       
+
+    </script>
+</body>
+</html>
