@@ -21,4 +21,16 @@
         where
             user_id = #{user_id}
     </select>
+    <select id="getUsers" resultType="com.study.springboot202010kkr.web.dto.UserDto">
+        select
+            user_id as userId,
+            username,
+            password,
+            name,
+            email
+        from
+            user_mst
+    </select>
 </mapper>
+
+

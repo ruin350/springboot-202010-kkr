@@ -27,4 +27,8 @@ public class DBTestController {
         UserDto userDto = userService.getUser(userId);
         return ResponseEntity.ok().body(userDto);
     }
+    @GetMapping("/users")
+    public ResponseEntity<?> getUsers(){
+        return ResponseEntity.ok(userService.getUsers());
+    }
 }

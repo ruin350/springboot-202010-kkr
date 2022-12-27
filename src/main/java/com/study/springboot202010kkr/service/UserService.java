@@ -5,6 +5,8 @@ import com.study.springboot202010kkr.web.dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -22,5 +24,9 @@ public class UserService {
         UserDto userDto = null;
         userDto = userRepository.findUserByUserId(userId);
         return userDto;
+    }
+
+    public List<UserDto> getUsers() {
+        return userRepository.getUsers();
     }
 }
