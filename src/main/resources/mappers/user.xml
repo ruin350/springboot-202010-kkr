@@ -31,6 +31,19 @@
         from
             user_mst
     </select>
+    <select id="findUserByUsername" parameterType="String"
+            resultType="com.study.springboot202010kkr.web.dto.UserDto">
+        select
+            user_id as userId,
+            username,
+            password,
+            name,
+            email
+        from
+            user_mst
+        where
+            username = #{username}
+    </select>
 </mapper>
 
 
