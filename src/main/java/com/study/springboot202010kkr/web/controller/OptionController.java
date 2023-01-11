@@ -3,7 +3,6 @@ package com.study.springboot202010kkr.web.controller;
 import com.study.springboot202010kkr.service.OptionService;
 import com.study.springboot202010kkr.web.dto.CategoryDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
